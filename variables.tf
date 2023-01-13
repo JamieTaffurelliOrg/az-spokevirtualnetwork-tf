@@ -85,6 +85,17 @@ variable "subnets" {
   description = "Subnets to deploy"
 }
 
+variable "private_dns_zones" {
+  type = list(object(
+    {
+      resource_group_name = string
+      name                = string
+    }
+  ))
+  default     = []
+  description = "Link virtual network to private dns zones"
+}
+
 variable "network_watcher_name" {
   type        = string
   description = "Name of Network Watcher to send diagnostics"
