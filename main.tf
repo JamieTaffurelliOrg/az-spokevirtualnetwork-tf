@@ -143,7 +143,6 @@ resource "azurerm_subnet_route_table_association" "route_table_join" {
 
 resource "azurerm_virtual_network_peering" "peering" {
   for_each                     = { for k in var.peerings : "${azurerm_virtual_network.network.name}-${k.remote_vnet_name}" => k if k != null }
-  provider                     = azurerm.hub
   name                         = each.key
   resource_group_name          = var.resource_group_name
   virtual_network_name         = azurerm_virtual_network.network.name
