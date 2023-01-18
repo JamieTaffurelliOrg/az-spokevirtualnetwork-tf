@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     azurerm = {
-      configuration_aliases = [azurerm.logs, azurerm.dns]
+      configuration_aliases = [azurerm.logs, azurerm.dns, azurerm.hub]
       source                = "hashicorp/azurerm"
       version               = "~> 3.20"
     }

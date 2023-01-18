@@ -85,6 +85,17 @@ variable "subnets" {
   description = "Subnets to deploy"
 }
 
+variable "peerings" {
+  type = list(object(
+    {
+      remote_vnet_name                = string
+      remote_vnet_resource_group_name = string
+    }
+  ))
+  default     = []
+  description = "Spoke to hub peerings to deploy"
+}
+
 variable "private_dns_zones" {
   type = list(object(
     {
