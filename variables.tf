@@ -76,8 +76,8 @@ variable "subnets" {
       service_endpoint_policy_ids                   = optional(list(string))
       private_endpoint_network_policies_enabled     = optional(bool, true)
       private_link_service_network_policies_enabled = optional(bool, true)
-      network_security_group_reference              = string
-      route_table_reference                         = string
+      network_security_group_reference              = optional(string)
+      route_table_reference                         = optional(string)
       delegation                                    = optional(string)
       delegation_actions                            = optional(list(string))
     }

@@ -130,13 +130,13 @@ resource "azurerm_subnet" "subnets" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsg_join" {
-  for_each                  = { for k in var.subnets : k.name => k if k != null }
+  for_each                  = { for k in var.subnets : k.name => k if k != null && k.network_security_group_reference != null }
   subnet_id                 = azurerm_subnet.subnets[each.key].id
   network_security_group_id = azurerm_network_security_group.nsg[each.value.network_security_group_reference].id
 }
 
 resource "azurerm_subnet_route_table_association" "route_table_join" {
-  for_each       = { for k in var.subnets : k.name => k if k != null }
+  for_each       = { for k in var.subnets : k.name => k if k != null && k.route_table_reference != null }
   subnet_id      = azurerm_subnet.subnets[each.key].id
   route_table_id = azurerm_route_table.route_table[each.value.route_table_reference].id
 }
