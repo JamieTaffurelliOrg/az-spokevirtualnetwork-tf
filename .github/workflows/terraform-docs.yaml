@@ -27,7 +27,7 @@ jobs:
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
-        working-dir: ./spoke-vnet,./spoke-vnet-hub
+        working-dir: ./spoke-vnet,./spoke-vnet-vhub
         output-file: README.md
         output-method: inject
         git-push: "true"
