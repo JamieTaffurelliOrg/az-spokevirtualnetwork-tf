@@ -12,6 +12,7 @@
 |------|---------|
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.20 |
 | <a name="provider_azurerm.ddos"></a> [azurerm.ddos](#provider\_azurerm.ddos) | ~> 3.20 |
+| <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | ~> 3.20 |
 | <a name="provider_azurerm.hub"></a> [azurerm.hub](#provider\_azurerm.hub) | ~> 3.20 |
 | <a name="provider_azurerm.logs"></a> [azurerm.logs](#provider\_azurerm.logs) | ~> 3.20 |
 
@@ -28,6 +29,7 @@ No modules.
 | [azurerm_network_security_group.nsg](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
 | [azurerm_network_security_rule.nsg_rules](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_rule) | resource |
 | [azurerm_network_watcher_flow_log.network](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_watcher_flow_log) | resource |
+| [azurerm_private_dns_zone_virtual_network_link.dns_vnet_link](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_dns_zone_virtual_network_link) | resource |
 | [azurerm_subnet.subnets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) | resource |
 | [azurerm_subnet_network_security_group_association.nsg_join](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) | resource |
 | [azurerm_virtual_hub_connection.network_hub_connection](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_hub_connection) | resource |
@@ -51,6 +53,7 @@ No modules.
 | <a name="input_network_security_groups"></a> [network\_security\_groups](#input\_network\_security\_groups) | Network Security Groups to deploy | <pre>list(object(<br>    {<br>      name                = string<br>      resource_group_name = string<br>      rules = list(object(<br>        {<br>          name                         = string<br>          description                  = string<br>          priority                     = number<br>          direction                    = string<br>          access                       = string<br>          protocol                     = string<br>          source_port_ranges           = optional(list(string))<br>          source_port_range            = optional(string)<br>          destination_port_ranges      = optional(list(string))<br>          destination_port_range       = optional(string)<br>          source_address_prefix        = optional(string)<br>          source_address_prefixes      = optional(list(string))<br>          destination_address_prefix   = optional(string)<br>          destination_address_prefixes = optional(list(string))<br>        }<br>      ))<br>    }<br>  ))</pre> | `[]` | no |
 | <a name="input_network_watcher_name"></a> [network\_watcher\_name](#input\_network\_watcher\_name) | Name of Network Watcher to send diagnostics | `string` | n/a | yes |
 | <a name="input_network_watcher_resource_group_name"></a> [network\_watcher\_resource\_group\_name](#input\_network\_watcher\_resource\_group\_name) | Resource Group of Network Watcher to send diagnostics | `string` | n/a | yes |
+| <a name="input_private_dns_zones"></a> [private\_dns\_zones](#input\_private\_dns\_zones) | Link virtual network to private dns zones | <pre>list(object(<br>    {<br>      resource_group_name  = string<br>      name                 = string<br>      registration_enabled = optional(bool, false)<br>    }<br>  ))</pre> | `[]` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource Group name to deploy to | `string` | n/a | yes |
 | <a name="input_storage_account_name"></a> [storage\_account\_name](#input\_storage\_account\_name) | Name of storage account to send diagnostics | `string` | n/a | yes |
 | <a name="input_storage_account_resource_group_name"></a> [storage\_account\_resource\_group\_name](#input\_storage\_account\_resource\_group\_name) | Resource Group of storage account to send diagnostics | `string` | n/a | yes |
@@ -67,4 +70,6 @@ No modules.
 | <a name="output_subnets"></a> [subnets](#output\_subnets) | The subnets deployed to the Virtual Network |
 | <a name="output_virtual_network_address_space"></a> [virtual\_network\_address\_space](#output\_virtual\_network\_address\_space) | Address space of the Virtual Network |
 | <a name="output_virtual_network_id"></a> [virtual\_network\_id](#output\_virtual\_network\_id) | Resource ID of the Virtual Network |
+| <a name="output_virtual_network_name"></a> [virtual\_network\_name](#output\_virtual\_network\_name) | Name of the Virtual Network |
+| <a name="output_virtual_network_resource_group_name"></a> [virtual\_network\_resource\_group\_name](#output\_virtual\_network\_resource\_group\_name) | Resource group of the Virtual Network |
 <!-- END_TF_DOCS -->
