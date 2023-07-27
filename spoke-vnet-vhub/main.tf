@@ -107,7 +107,7 @@ resource "azurerm_virtual_hub_connection" "network_hub_connection" {
   name                      = var.virtual_network_name
   virtual_hub_id            = data.azurerm_virtual_hub.hub[0].id
   remote_virtual_network_id = azurerm_virtual_network.network.id
-  internet_security_enabled = true
+  internet_security_enabled = var.hub_connection.internet_security_enabled
 }
 
 resource "azurerm_subnet" "subnets" {
