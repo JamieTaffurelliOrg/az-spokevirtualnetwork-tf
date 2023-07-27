@@ -46,7 +46,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_ddos_protection"></a> [ddos\_protection](#input\_ddos\_protection) | DDOS protection plan to attach to the virtual network | <pre>object({<br>    name                = string<br>    resource_group_name = string<br>    enabled             = optional(bool, true)<br>  })</pre> | `null` | no |
 | <a name="input_dns_servers"></a> [dns\_servers](#input\_dns\_servers) | DNS servers to query from the virtual network | `list(string)` | `[]` | no |
-| <a name="input_hub_connection"></a> [hub\_connection](#input\_hub\_connection) | Connection to secured virtual hub | <pre>object({<br>    name                = string<br>    resource_group_name = string<br>  })</pre> | `null` | no |
+| <a name="input_hub_connection"></a> [hub\_connection](#input\_hub\_connection) | Connection to secured virtual hub | <pre>object({<br>    name                      = string<br>    resource_group_name       = string<br>    internet_security_enabled = optional(bool, true)<br>  })</pre> | `null` | no |
 | <a name="input_location"></a> [location](#input\_location) | Location of the Virtual Network | `string` | n/a | yes |
 | <a name="input_log_analytics_workspace_name"></a> [log\_analytics\_workspace\_name](#input\_log\_analytics\_workspace\_name) | Name of Log Analytics Workspace to send diagnostics | `string` | n/a | yes |
 | <a name="input_log_analytics_workspace_resource_group_name"></a> [log\_analytics\_workspace\_resource\_group\_name](#input\_log\_analytics\_workspace\_resource\_group\_name) | Resource Group of Log Analytics Workspace to send diagnostics | `string` | n/a | yes |

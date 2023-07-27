@@ -65,8 +65,9 @@ variable "dns_servers" {
 
 variable "hub_connection" {
   type = object({
-    name                = string
-    resource_group_name = string
+    name                      = string
+    resource_group_name       = string
+    internet_security_enabled = optional(bool, true)
   })
   default     = null
   description = "Connection to secured virtual hub"
