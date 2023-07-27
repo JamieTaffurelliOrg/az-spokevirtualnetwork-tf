@@ -141,6 +141,17 @@ resource "azurerm_subnet_network_security_group_association" "nsg_join" {
   network_security_group_id = azurerm_network_security_group.nsg[each.value.network_security_group_reference].id
 }
 
+resource "azurerm_private_dns_zone_virtual_network_link" "dns_vnet_link" {
+  provider              = azurerm.dns
+  for_each              = { for k in var.private_dns_zones : k.name => k if k != null }
+  name                  = var.virtual_network_name
+  resource_group_name   = each.value["resource_group_name"]
+  private_dns_zone_name = each.value["name"]
+  registration_enabled  = each.value["registration_enabled"]
+  virtual_network_id    = azurerm_virtual_network.network.id
+  tags                  = var.tags
+}
+
 resource "azurerm_monitor_diagnostic_setting" "virtual_network_diagnostics" {
   name                       = "${var.log_analytics_workspace_name}-security-logging"
   target_resource_id         = azurerm_virtual_network.network.id
