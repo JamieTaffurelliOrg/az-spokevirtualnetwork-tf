@@ -19,4 +19,6 @@ permissions:
 jobs:
   call-terraform-docs-workflow:
     uses: JamieTaffurelliOrg/github-actions-templates/.github/workflows/terraform-docs-template.yaml@main
+    with:
+      working-dir: './spoke-vnet,./spoke-vnet-vhub'
     secrets: inherit
