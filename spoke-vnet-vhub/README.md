@@ -3,18 +3,18 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.6.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.20 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | ~> 3.20 |
-| <a name="provider_azurerm.ddos"></a> [azurerm.ddos](#provider\_azurerm.ddos) | ~> 3.20 |
-| <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | ~> 3.20 |
-| <a name="provider_azurerm.hub"></a> [azurerm.hub](#provider\_azurerm.hub) | ~> 3.20 |
-| <a name="provider_azurerm.logs"></a> [azurerm.logs](#provider\_azurerm.logs) | ~> 3.20 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.65.0 |
+| <a name="provider_azurerm.ddos"></a> [azurerm.ddos](#provider\_azurerm.ddos) | 3.65.0 |
+| <a name="provider_azurerm.dns"></a> [azurerm.dns](#provider\_azurerm.dns) | 3.65.0 |
+| <a name="provider_azurerm.hub"></a> [azurerm.hub](#provider\_azurerm.hub) | 3.65.0 |
+| <a name="provider_azurerm.logs"></a> [azurerm.logs](#provider\_azurerm.logs) | 3.65.0 |
 
 ## Modules
 
